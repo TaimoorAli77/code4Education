@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-function Users() {
+export function NUsers() {
   return (
-    <div>
-      <h1>Users ! TAimo </h1>
-    </div>
-  )
+    <h1>
+      Functional Component
+    </h1>
+  );
 }
 
-export default Users
+
+
+export function NewCustomer() {
+  return (
+    <h2>This is used to call multiple functions and here we don't use default</h2>
+  );
+}
+

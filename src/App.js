@@ -1,11 +1,13 @@
 import './App.css';
-import Users from './Users';
+import { NUsers, NewCustomer } from './Users';
 
 function App() {
   return (
     <div className="App">
       <h1>Hello Taimoor!</h1>
-      <Users />
+      <NUsers />
+      <NUsers></NUsers>
+      <NewCustomer />
     </div>
   );
 }

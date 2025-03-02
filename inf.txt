@@ -1,0 +1,10 @@
+***React JS***
+virtual DOM
+Asynchronous JS (one task at a time)
+Parent to child (unidirectional)
+=>>npx create-react-app
+filename first word capital 
+make a component and import it to use it
+==>> npm install 
+when used on another system so use upper command
+component
