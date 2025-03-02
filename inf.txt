@@ -6,5 +6,9 @@ Parent to child (unidirectional)
 filename first word capital 
 make a component and import it to use it
 ==>> npm install 
-when used on another system so use upper command
-component
+when used on another system so use upper command to install all necessary files for npm
+=>>Component types
+1. functional component 2. class component 3. Pure component 4. high-order component 5. controlled component
+6. uncontrolled component
+* Watch Git repository Code4Education where explained about default export function and  export function and  also 
+& how to call them for reuse in the same component and different component.

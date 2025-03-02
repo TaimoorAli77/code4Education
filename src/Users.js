@@ -1,12 +1,16 @@
 import React from 'react';
 
 export default function Users() {
+  function common(){
+    return(<h3>Hello common function</h3>)
+  }
   return (<div>
     <NUsers />
     <NewCustomer />
     <p>
       no need to export above those functions because they are already here
     </p>
+    {common()}
   </div>);
 }
 
