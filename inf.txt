@@ -11,4 +11,7 @@ when used on another system so use upper command to install all necessary files 
 1. functional component 2. class component 3. Pure component 4. high-order component 5. controlled component
 6. uncontrolled component
 * Watch Git repository Code4Education where explained about default export function and  export function and  also 
-& how to call them for reuse in the same component and different component.
+& how to call them for reuse in the same component and different component. i.e, <NewUser/>
+*function within function accessed as below but cannot use outside of the function
+{common()}
+<common />

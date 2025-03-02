@@ -7,10 +7,12 @@ export default function Users() {
   return (<div>
     <NUsers />
     <NewCustomer />
+    {3*3}
     <p>
       no need to export above those functions because they are already here
     </p>
     {common()}
+    <common />
   </div>);
 }
 
