@@ -1,15 +1,16 @@
 import React from "react";
-
+import { useState } from "react";
 const Button = () => {
-  let data = "coder";
+  const [data, setData] = useState("Taimoor Malik");
   const btn = () => {
-    data = "Code for future!";
+    setData("Code for future!");
     alert(data);
   };
+  console.log("render...");
   return (
-    <div>
-      <button onClick={btn}>Click me!</button>
+    <>
       <h5>{data}</h5>
+      <button onClick={btn}>Click me to change!</button>
       <button
         onClick={() => {
           alert("Welcome back");
@@ -17,7 +18,7 @@ const Button = () => {
       >
         Now Click
       </button>
-    </div>
+    </>
   );
 };
 

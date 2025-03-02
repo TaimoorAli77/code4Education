@@ -1,26 +1,26 @@
 import React from 'react';
 
 export default function Users() {
-  function common(){
-    return(<h3>Hello common function</h3>)
+  function NewCommon() {
+    return (<>Hello common function</>)
   }
-  return (<div>
+  return (<>
     <NUsers />
     <NewCustomer />
-    {3*3}
+    {3 * 3}
     <p>
       no need to export above those functions because they are already here
     </p>
-    {common()}
-    <common />
-  </div>);
+    {NewCommon()}
+    <NewCommon />
+  </>);
 }
 
 export function NUsers() {
   return (
-    <h1>
+    <>
       Functional Component
-    </h1>
+    </>
   );
 }
 

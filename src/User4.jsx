@@ -5,6 +5,6 @@ export default function User4() {
     "h1",
     null,
     "Hello JSx ! 2 ",
-    React.createElement("h4", null, "Description")
+    React.createElement("p", null, "Description")
   );
 }

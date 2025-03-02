@@ -1,5 +1,6 @@
 import './App.css';
 import Button from './Button';
+import Counter from './Counter';
 import User2 from './User2';
 import User3 from './User3';
 import User4 from './User4';
@@ -10,6 +11,7 @@ function App() {
     <>
       <h1>Hello Taimoor!</h1>
       <Users />
+      <Counter />
       <NUsers />
       <NUsers></NUsers>
       <NewCustomer />
