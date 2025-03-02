@@ -15,3 +15,4 @@ when used on another system so use upper command to install all necessary files 
 *function within function accessed as below but cannot use outside of the function
 {common()}
 <common />
+* <button onClick={hello}> Hello </button>  // hello is a function which is called when button is clicked.

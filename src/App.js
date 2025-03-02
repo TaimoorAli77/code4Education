@@ -1,4 +1,5 @@
 import './App.css';
+import Button from './Button';
 import User2 from './User2';
 import User3 from './User3';
 import User4 from './User4';
@@ -15,6 +16,7 @@ function App() {
       <User2 />
       <User3 />
       <User4 />
+      <Button />
     </>
   );
 }
