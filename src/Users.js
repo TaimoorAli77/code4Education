@@ -1,5 +1,15 @@
 import React from 'react';
 
+export default function Users() {
+  return (<div>
+    <NUsers />
+    <NewCustomer />
+    <p>
+      no need to export above those functions because they are already here
+    </p>
+  </div>);
+}
+
 export function NUsers() {
   return (
     <h1>
