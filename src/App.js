@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
 import './App.css'
-import UserList from './UserList'
-export default class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      name : "Taimoor",
-      age:30
-    }
-  }
-  render() {
-    const {name,age} = this.state
-    return (
-      <div className='App'>
-        <h1>Props in Class Component</h1>
-        {/* <UserList name="Abdul Ahad " email="Taimoorali083@gmail.c0m"/>   */}
-        <button onClick={()=>{this.setState({name:"Ali",age:19})}}>Click to change data</button>
-        <UserList name={name} age={age}/>  
+const App = () => {
+  const [inputValue, setInputValue] = useState("")
+  const [finalValue, setFinalValue] = useState("")
 
-      </div>
-    )
+  const data = (event) => {
+    console.log(event.target.value)
+    setInputValue(event.target.value)
   }
+  return (
+    <>
+      <div className='App'>
+        <h1>{inputValue}</h1>
+        <input type='text' onChange={data} />
+        <button onClick={() => { setFinalValue(inputValue) }}>click to show</button>
+        <h1>{finalValue}</h1>
+      </div>
+
+    </>
+  );
 }
+
+export default App;
