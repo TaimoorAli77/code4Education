@@ -1,8 +1,8 @@
 import React from 'react'
 
-const UserCard = (data) => {
+const UserCard = (props) => {
   // console.log(props)
-  console.log(data)
+  console.log(props)
   return (
     <>
       {/* <h3>Hello {props.fname} {props.lname}</h3> */}
@@ -13,7 +13,7 @@ const UserCard = (data) => {
         <h5>Email: {data.email}</h5>
         <h5>Date: {data.date}</h5>
       </div> */}
-      <h2>Hi {data.name}</h2>
+      <h2>Hi {props.name}</h2>
     </>
   )
 }
