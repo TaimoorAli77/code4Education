@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 const Button = () => {
-  const [data, setData] = useState("Taimoor Malik");
+  const [data, setData] = useState("Taimoor");
   const btn = () => {
     setData("Code for future!");
     alert(data);
