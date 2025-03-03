@@ -1,28 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import './App.css'
 const App = () => {
-  const [inputValue, setInputValue] = useState("")
-  const [finalValue, setFinalValue] = useState(false)
+  const [show, setShow] = useState(false);
 
-  const data = (event) => {
-    console.log(event.target.value)
-    setInputValue(event.target.value)
-    setFinalValue(false)
-  }
-  const Submit = () => {
-    setFinalValue(true);
-
-  }
   return (
     <>
-      <div className='App'>
-        <h1>{finalValue ? inputValue : ""}</h1>
-        <input type='text' onChange={data} />
-        <button onClick={() => { Submit() }}>click to show</button>
-      </div>
+<div className='checkmate'>
 
+      {show ? <div className='status'>Content</div> : null}
+      <button onClick={() => { setShow(false) }}>hide</button>
+      <button onClick={() => { setShow(true) }}>show</button>
+</div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
