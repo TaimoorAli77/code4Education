@@ -16,4 +16,6 @@ when used on another system so use upper command to install all necessary files 
 {common()}
 <common />
 * <button onClick={hello}> Hello </button>  // hello is a function which is called when button is clicked.
+<button onClick={()=>{hello()}}> Hello </button> // proper way to call a function***
+<button onClick={hello()}> Hello </button>  // hello() is not used because it loads data without calling/clicking
 State in React is used to contain data and can change over time. setState()triggers UI updates
