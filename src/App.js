@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
+import FormHandling from './FormHandling'
 const App = () => {
-  const [toggle, setToggle] = useState(false);
 
   return (
     <>
       <div className='checkmate'>
-        <h1>Show Hide Toggle</h1>
-        {toggle ? <div className='status'>Content</div> : null}
-        <button onClick={() => { setToggle(!toggle) }}>Toggle</button>
+        <h1>Form Handling</h1>
+        <FormHandling />
       </div>
     </>
   )
