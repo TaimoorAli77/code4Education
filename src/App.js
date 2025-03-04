@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import ConditionalRendering from './ConditionalRendering'
+import FormValidation from './FormValidation'
 const App = () => {
 
   return (
     <>
       <div className='checkmate'>
-        <h1>Conditional Rendering</h1>
-        <ConditionalRendering />
+        <h1>Form Validation</h1>
+        <FormValidation />
       </div>
     </>
   )

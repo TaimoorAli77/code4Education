@@ -52,3 +52,8 @@
 .checkmate{
   text-align: center;
 }
+.error{
+  color:red;
+  display: inline-block;
+  padding: 0 10px;
+}
