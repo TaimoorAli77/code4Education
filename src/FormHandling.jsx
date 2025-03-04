@@ -9,21 +9,22 @@ const FormHandling = () => {
     role: "",
   });
 
-  const changeHandle = (event) => {
-    const { name, value, type, checked } = event.target;
-    const fieldValue = type === "checkbox" ? checked : value;
-    console.log(checked, value, type, fieldValue, event.target, name);
+  const changeHandle = (e) => {
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
+    console.log(inputValue);
     setFormData({
       ...formData,
-      [name]: fieldValue,
+      [name]: inputValue,
     });
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // form submit hony p browser refresh na ho   +    multiple events p jo click ho rha h wo single click chly.
-    console.log("Form Data : ", formData);
+    console.log(formData);
+    
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -83,6 +84,7 @@ const FormHandling = () => {
         </div>
         <button>submit</button>
       </form>
+      <h1>{formData.username}</h1>
     </>
   );
 };
