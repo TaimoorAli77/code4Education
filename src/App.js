@@ -1,26 +1,18 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import './App.css'
-import Users from './Users'
-const App = () => {
-
-  const [count, setCount] = useState(0)
-
-  const countHandler = () => {
-    setCount(count + 1);
-    console.log(count)
+export default class App extends Component {
+  constructor(){
+    super()
+    console.log("constructor")
   }
-  const handleButtonClick = () => {
-    console.log("Btn clicked !")
-  }
-
-  return (
-    <>
+  render() {
+    console.log("rendered!")
+    return (<>
       <div className='checkmate'>
-        <h1>Pass Functions as a Props</h1>
-        <Users click={handleButtonClick} count={countHandler} counter={count}></Users>
+        <h1 className='checkmate'>LifeCycle Methods in React </h1>
+
       </div>
     </>
-  )
+    )
+  }
 }
-
-export default App
