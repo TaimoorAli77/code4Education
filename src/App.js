@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
-import RenderMethod from './RenderMethod'
 export default class App extends Component {
   constructor() {
     super()
     console.log("constructor")
     this.state = {
-      name: "Taimoor"
+      count: 0
     }
   }
+  componentDidMount() {
+    console.log("Component Did Mount !")
+  }
   render() {
-    console.log("rendered!")
+    console.log("render", this.state)
     return (<>
       <div className='checkmate'>
-        <h1 className='checkmate'>LifeCycle Methods in React </h1>
-        <RenderMethod name={this.state.name} />
-        <button onClick={() => { this.setState({ name: "Abdul Ahad" }) }}>Click</button>
+        <h1 className='checkmate'>Component did mount in React </h1>
+        <button onClick={() => { this.setState({count:this.state.count + 1}) }}>Click</button>
+        <h2>Counter : {this.state.count}</h2>
 
       </div>
     </>
