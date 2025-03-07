@@ -10,8 +10,16 @@ export default class App extends Component {
       count: 0
     }
   }
-  componentDidUpdate() {
-    console.log("Component did Update")
+  componentDidUpdate(preProps, preState) {
+    // console.log("Component did Update")
+    // if ((this.state.count, preState.count)) {
+    //   alert("working")
+    //   console.log("Component did Update", preState.count, this.state.count)
+    // }
+    console.log(preState.count, this.state.count)
+    if (this.state.count<10) {
+      this.setState({ count: this.state.count + 1 })
+    }
   }
   //third cDM will run.. mostly libraries and api calls are called inside the componentDidMount 
   // because it just calls once when we start the app.
@@ -47,8 +55,8 @@ export default class App extends Component {
 
         </h2>
         <h1>Component Did Update !</h1>
-        <button onClick={()=>{this.setState({name:"Malik Taimoor Ali Awan"})}}>Update Btn</button>
-{this.state.name}
+        <button onClick={() => { this.setState({ name: "Malik Taimoor Ali Awan" }) }}>Update Btn</button>
+        {this.state.name}
       </div>
     </>
     )
