@@ -49,4 +49,11 @@ other webpage the react replaces components in the DOM rather than refreshing(wh
 *)ComponentDidUpdate allows us to execute the code when updated.props ,states or api fetch case..
 *)DOM is a platform and language neutral interface that allows programs and scripts to dynamically update the content
 *)Style Types in ReactJS : inline css, normal css , css in js, sass @scss, styled component(external packages)
-*)
+*)SPA's single page application
+*)React Bootstrap (1.)npm install bootstrap react-bootstrap (2.){
+    /* The following line can be included in your src/index.js */
+  }
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  (3.)  import Button from 'react-bootstrap/Button';
+
+
