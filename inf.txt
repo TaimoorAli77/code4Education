@@ -43,3 +43,9 @@ from th DOM. It can be used for cleanup tasks.or cancelling api requests.
 (((<React.StrictMode>
 <App /> in index.js
 </React.StrictMode>  This is the reason twice called due to calling console.log result.)))
+*)React Render LifeCycle method:  Redirect the webpage. helps display view in certain UI's using certain logic
+defined in the render function & returns the output. => Incase of multiple webpages when you switch to some
+other webpage the react replaces components in the DOM rather than refreshing(which is the case in others i.e,html)
+*)ComponentDidUpdate allows us to execute the code when updated.props ,states or api fetch case..
+*)DOM is a platform and language neutral interface that allows programs and scripts to dynamically update the content
+*)

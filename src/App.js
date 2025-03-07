@@ -6,8 +6,12 @@ export default class App extends Component {
     //first this will run
     console.log("constructor")
     this.state = {
+      name: "Taimoor",
       count: 0
     }
+  }
+  componentDidUpdate() {
+    console.log("Component did Update")
   }
   //third cDM will run.. mostly libraries and api calls are called inside the componentDidMount 
   // because it just calls once when we start the app.
@@ -42,7 +46,9 @@ export default class App extends Component {
           <button onClick={this.Increment}>Click</button>
 
         </h2>
-
+        <h1>Component Did Update !</h1>
+        <button onClick={()=>{this.setState({name:"Malik Taimoor Ali Awan"})}}>Update Btn</button>
+{this.state.name}
       </div>
     </>
     )
