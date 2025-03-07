@@ -1,28 +1,21 @@
 import React, { Component } from 'react'
 import './App.css'
+import Unmount from './Unmount'
 export default class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      count: 0
+      show: true
     }
   }
 
-  shouldComponentUpdate(nextProp, nextState) {
-    console.log("Should Component Update !", this.state.count, nextState)
-    // return false
-    //   if (nextState.count < 5)   return true
-    // return false
-    if (nextState.count > 5) return true
-    return false
-  }
-
   render() {
+    console.log(this.state.show)
     return (<>
       <div className='checkmate'>
-        <h1 className='checkmate'>LifeCycle ShouldComponentUpdate in React </h1>
-        <h2>Counter : {this.state.count}</h2>
-        <button onClick={() => { this.setState({ count: this.state.count + 1 }) }}>Click</button>
+        <h1 className='checkmate'> Component in React </h1>
+        {this.state.show? <Unmount />:"Removed"}
+        <button onClick={() => { this.setState({ show: !this.state.show }) }}>Remove Component</button>
       </div>
     </>
     )
