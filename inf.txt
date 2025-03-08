@@ -55,5 +55,6 @@ other webpage the react replaces components in the DOM rather than refreshing(wh
   }
   import 'bootstrap/dist/css/bootstrap.min.css';
   (3.)  import Button from 'react-bootstrap/Button';
-
+*) map,filter,reduce,length (map() is higher order function & is used more than for loop because 
+it makes code easier to read)
 
