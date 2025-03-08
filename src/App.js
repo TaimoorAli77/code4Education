@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import { Table } from 'react-bootstrap'
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
   return (<>
     <div className='App'>
       <h1>Table</h1>
-      <table className='App'>
+      <Table striped responsive bordered hover  size="lg" variant='dark' className='App'>
         <thead>
           <tr>
             <th>Id</th>
@@ -33,15 +34,16 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          {tableObj.map((data, i) => {
-            return <tr key={i}>
+          {tableObj.map((data, i) => (
+            data.price === 40?(
+             <tr key={i}>
               <td>{data.id}</td>
               <td>{data.product}</td>
               <td>{data.price}</td>
-            </tr>
-          })}
+            </tr>):null
+          ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   </>
 
