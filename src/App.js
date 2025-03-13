@@ -1,49 +1,91 @@
 import React from 'react'
 import './App.css'
-import { Table } from 'react-bootstrap'
-
+import { Table,Container,Row,Col } from 'react-bootstrap'
 
 const App = () => {
 
-  const tableObj = [
+  const Object = [
     {
       id: 1,
       product: "Classy",
-      price: 20
+      price: 20,
+      objCategories: ["One", "Two", "Three", "Four"]
+
     },
     {
       id: 2,
       product: "Modern",
-      price: 40
+      price: 40,
+      objCategories: ["One2", "Two2", "Three2", "Four2"]
+
     },
     {
       id: 3,
       product: "New",
-      price: 60
+      price: 60,
+      objCategories: ["One3", "Two3", "Three3", "Four3"]
+
     },
   ]
   return (<>
     <div className='App'>
-      <h1>Table</h1>
-      <Table striped responsive bordered hover  size="lg" variant='dark' className='App'>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Product</th>
-            <th>price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableObj.map((data, i) => (
-            data.price === 40?(
-             <tr key={i}>
-              <td>{data.id}</td>
-              <td>{data.product}</td>
-              <td>{data.price}</td>
-            </tr>):null
-          ))}
-        </tbody>
-      </Table>
+      <h1>Nested Map</h1>
+      {/* Example 1 */}
+      <ul>
+        {Object.map((data) => (
+          <div key={data.id}>
+            <h1>Prod: </h1>
+            <li>{data.product}</li>
+            <li>{data.price}</li>
+            <br></br>
+            <ul>objCategories:
+              {/* <ol > */}
+              {data.objCategories.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
+              {/* </ol> */}
+            </ul>
+
+          </div>
+        ))}
+      </ul>
+
+      {/* Example 2 */}
+
+      <Container>
+        <Row>
+          <Col>
+          <Table className='table'>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Items</th>
+                <th>Categories</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.map((data,i)=>(
+
+              <tr key={data.id}>
+                <td>{data.product}</td>
+                 <td>{data.price}</td>
+                 <td>
+                  <ul className='list-unstyled'>
+                    {data.objCategories.map((d,i)=>{
+                     return  <li key={i}>{d}</li>
+                    })}
+
+                  </ul>
+                 </td>
+              </tr>
+              ))}
+            </tbody>
+            
+            </Table>
+            </Col>
+        </Row>
+      </Container>
+
     </div>
   </>
 
