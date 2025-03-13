@@ -54,7 +54,7 @@ const App = () => {
 
       <Container>
         <Row>
-          <Col>
+          <Col md={{span:6,offset:3}}>
           <Table className='table'>
             <thead>
               <tr>
