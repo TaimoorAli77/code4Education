@@ -1,11 +1,7 @@
 import React from 'react';
 
-const ReuseComponent = () => {
-  return (
-    <div>Resuse Comp
-      
-    </div>
-  );
+const ReuseComponent = ({text,onclick}) => {
+  return <button onClick={onclick}>{text}</button>
 }
 
 export default ReuseComponent;
