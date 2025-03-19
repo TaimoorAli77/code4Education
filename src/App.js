@@ -12,7 +12,6 @@ const App = () => {
     return sum
   }, [num1, num2])
 
-  // console.log("Component rendered!")
   return (
     <>
       <h1>useMemo in React JS</h1>

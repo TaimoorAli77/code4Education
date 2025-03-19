@@ -61,6 +61,8 @@ it makes code easier to read)
 unnecessary re-renders. Performance optimization technique. functional component is wrapped with react.Memo
 Memoization MEANS  react will store the rendered output of the component.@ only rerender when the props are changed
 * useMemo hook is used to memoize the result of a computation and optimize Performance. only recompute when 
-its dependency change (second argument).
+its dependency change (second argument). useEffect whole component re-render when props pass but useMemo used
+just for the particular function.
+
 
 
