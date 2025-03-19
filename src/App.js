@@ -1,35 +1,26 @@
-import React, { Fragment, useState } from 'react'
-import './App.css'
-import ChildComponent from './ChildComponent'
-import ShareComp from './ShareComp'
+import React, { Component } from 'react'
+import Rpure from './Rpure'
 
-const App = () => {
-  const [sharedData, setSharedData] = useState('')
-
-  const changeData = (data) => {
-    setSharedData(data)
-    console.log(sharedData)
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      count :0
+    }
   }
-  const parentAlert = (d) => {
-    alert(d.name)
-    console.log(d)
+  handleIncrement = ()=>{
+    this.setState((prevState)=>({
+      count: prevState.count + 1
+      //if we don't make this change pure component won't be called.
+  }))
   }
-  return (
-    // <>   or
-    // <React.Fragment>  or
-    <Fragment>
-
-      <h1>Lifting State Up (From child to parent)</h1>
-
-      <ChildComponent sharedData={sharedData} changeData={changeData} />
-
-      <ShareComp d={sharedData} alert={parentAlert} />
-
-    </Fragment>
-    // </React.Fragment>
-    // </>
-
-  )
+  render() {
+    console.log("Parent Rendered!")
+    return (
+      <div>
+        <h1>React Pure component </h1>
+        <Rpure count = {this.state.count} func={this.handleIncrement}/>
+      </div>
+    )
+  }
 }
-
-export default App

@@ -9,8 +9,8 @@ const ChildComponent = ({ sharedData, changeData }) => {
     <>
       <h2>Child Component</h2>
 
-      {/* <Button onClick={change}>Click</Button> */}
       <input value={sharedData} onChange={change}></input>
+      <h2>{sharedData}</h2>
     </>
   );
 };
