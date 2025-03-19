@@ -1,18 +1,14 @@
-import React from "react";
+import React,{memo} from 'react';
 
-const ChildComponent = ({ sharedData, changeData }) => {
-  const change = (e) => {
-    const value = e.target.value;
-    changeData(value);
-  };
+const ChildComponent = ({count}) => {
+  console.log("Child component rendered!")
   return (
-    <>
-      <h2>Child Component</h2>
-
-      <input value={sharedData} onChange={change}></input>
-      <h2>{sharedData}</h2>
-    </>
+    <div>
+      <h1>{count}</h1>
+    </div>
   );
-};
+}
 
-export default ChildComponent;
+export default memo(ChildComponent);
+//this is how memo used . this component is now wrapped inside memo and it will not render again unless 
+// props are changed

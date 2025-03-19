@@ -1,26 +1,23 @@
-import React, { Component } from 'react'
-import Rpure from './Rpure'
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
 
-export default class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      count :0
-    }
-  }
-  handleIncrement = ()=>{
-    this.setState((prevState)=>({
-      count: prevState.count + 1
-      //if we don't make this change pure component won't be called.
-  }))
-  }
-  render() {
-    console.log("Parent Rendered!")
-    return (
-      <div>
-        <h1>React Pure component </h1>
-        <Rpure count = {this.state.count} func={this.handleIncrement}/>
-      </div>
-    )
-  }
+const App = () => {
+  const [count, setCount] = useState(0)
+
+
+  console.log("Parent Component rendered!")
+  return (
+    <>
+      <h1>Memo in React JS</h1>
+      <ChildComponent count={count} />
+      {/* if we don't pass props then it will not rerender that */}
+      <button onClick={() => { setCount(count + 1) }}>Increment</button>
+      <h3>
+        {/* {count} */}
+
+      </h3>
+    </>
+  );
 }
+
+export default App;
