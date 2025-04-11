@@ -1,31 +1,31 @@
-import React, { useState, useMemo } from 'react';
+import React, { Component, createRef } from 'react';
 
-const App = () => {
-  const [num1, setNum1] = useState(0)
-  const [num2, setNum2] = useState(0)
+class App extends Component {
+  constructor() {
+    super();
+    this.myInputRef = createRef()
+  }
+  // componentDidMount() {
+  //   this.myInputRef.current.value = "Taimoor Ali"
+  // }
+  handleClick = () => {
+    this.myInputRef.current.focus()
+    this.myInputRef.current.style.color = "white"
+    this.myInputRef.current.style.background = "green"
+    console.log(this.myInputRef.current.value)
+  }
+  render() {
+    console.log(this.myInputRef)
+    return (
+      <div className="App">
+        <h1>Ref In React</h1>
 
-  const [count, setCount] = useState(0)
+        <input type="text" ref={this.myInputRef} />
+        <button onClick={this.handleClick}>Focus input</button>
+      </div>
+    )
+  }
 
-  const sum = useMemo(() => {
-    console.log("Calculating Sum ...")
-    let sum = num1 + num2
-    return sum
-  }, [num1, num2])
-
-  return (
-    <>
-      <h1>useMemo in React JS</h1>
-      <input type="number" value={num1} onChange={(e) => { setNum1(Number(e.target.value)) }} />
-      <input type="number" value={num2} onChange={(e) => { setNum2(Number(e.target.value)) }} />
-      <h1>sum : {sum}</h1>
-      {/* if we don't pass props then it will not rerender that */}
-      <button onClick={() => { setCount(count + 1) }}>Increment</button>
-      <h3>
-        {count}
-
-      </h3>
-    </>
-  );
 }
 
 export default App;
