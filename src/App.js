@@ -1,17 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import ChildComponent from './ChildComponent';
+import { Component } from 'react';
 
 const App = () => {
-  const inputRef = useRef(null)
-  const handleBtn = () => {
-    const inputValue = inputRef.current.value;
-    alert(`value  :  ${inputValue}`)
-    console.log(`value  :  ${inputValue}`)
-    console.log(inputRef)
-  }
+const[val,setVal] =  useState("Taimoot")
+const handleChange = (e)=>{
+  setVal(e.target.value)
+}
   return (
     <div>
-      <input ref={inputRef} type="text" />
-      <button onClick={handleBtn}>check ref/ Get input Value</button>
+      <h1 >controlled Component: states are used form and input plus watch w3school for refuse in function</h1> 
+      <input type="text" value={val} onChange={(e)=>handleChange(e)}/>
+      <h3>{val}</h3>
     </div>
   )
 }
