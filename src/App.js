@@ -1,31 +1,45 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
-  const inputRef = useRef(null)
-  const inputRef2 = useRef(null)
-  const inputRef3 = useRef(null)
-  const handleChange = (e) => {
-    e.preventDefault();
-    console.log("The first input Value:", inputRef.current.value)
-    console.log("The Second input value: ", inputRef2.current.value)
-    console.log("3rd val : ", inputRef3.current.value)
-    console.log("4th val : ", document.getElementById("val3").value)
 
+  // Higher Order Component
+  const withCounter = (wrappedComponent) => {
+    return function WithCounter(props) {
+      const [count, setCount] = useState(0);
+      const Increment = () => {
+        setCount(count + 1)
+      }
+      return <wrappedComponent {...props} count={count} increment={Increment} />
+
+    }
   }
+
+
+  // Functional component
+
+  const Counter = ({ count, increment }) => {
+    return (
+      <div>
+        <p>Count: {count}</p>
+        <button onClick={increment}>Increment</button>
+      </div>
+
+    )
+  }
+
+
+  // Wrap counter component with the  withCounter HOC
+
+  const counterWithEnhance =  withCounter(Counter);
+
   return (
     <div>
-      <h1 >Uncontrolled Component: useRef are used and useState are not used in form handling. Dom is used to manage
-        value. No rerenders. reacts virtual Dom and actual dom diff. through id can also be used.</h1>
-      <form onSubmit={handleChange}>
-
-        <input type="text" ref={inputRef} />
-        <input type="text" ref={inputRef2} />
-        <input type="text" ref={inputRef3} />
-        <input type='text'  id='val3'/>
-
-        <button>submit</button>
-      </form>
-
+      <h1>HOC - higher order component </h1>
+      {/* Example 1 */}
+      {/* <h2>Count: {count}</h2> */}
+      {/* <button onClick={()=>setCount(count+1)}>Update Count</button> */}
+      {/* Example 2 */}
+      <counterWithEnhance />
     </div>
   )
 }
