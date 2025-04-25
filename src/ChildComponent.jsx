@@ -1,22 +1,13 @@
-import React, { forwardRef , useRef, useImperativeHandle} from "react";
+import React, { memo } from "react";
 
-const ChildComponent = (props,ref) => {
-  const childRef =  useRef()
-  const handleChildButtonRef = ()=>{
-
-    console.log("Child component rendered!");
-  }
-
-  useImperativeHandle(ref,()=>({ handleChildButtonRef}))
+const ChildComponent = ({ Increment }) => {
+  console.log("child comp");
   return (
     <div>
-      <h1>Child Component</h1>
-      <input type="text" ref={ref} />
-      <button ref={childRef}>ref child btn</button>
+      <h2>child component</h2>
+      <button onClick={Increment}>click</button>
     </div>
   );
 };
 
-export default forwardRef(ChildComponent);
-//this is how memo used . this component is now wrapped inside memo and it will not render again unless
-// props are changed
+export default memo(ChildComponent);
