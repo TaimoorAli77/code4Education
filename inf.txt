@@ -64,5 +64,9 @@ Memoization MEANS  react will store the rendered output of the component.@ only 
 its dependency change (second argument). useEffect whole component re-render when props pass but useMemo used
 just for the particular function.
 
+* UseReducer Hook   (for multiple states to handle used UseReducer instead of useState)
+* useContext Hook   (instead of passing props use useContext to access props directly, for authentication, 
+  redux replaces , language ,themes change etc are use cases of useContext, manage cache data & api responses,
+   dependency configContext settings for apps)
 
 
