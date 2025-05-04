@@ -14,7 +14,7 @@ const App = () => {
       <MyContext.Provider value={sharedData}>
 
         <h1>useContext hook </h1>
-        <chidAccessContextData.Provider value={newChildData}>
+        <chidAccessContextData.Provider value={{newChildData,sharedData}}>
           <NewChild />
         </chidAccessContextData.Provider>
         <Child1 />

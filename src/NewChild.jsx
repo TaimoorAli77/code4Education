@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
-import { chidAccessContextData } from "./App";
+import { chidAccessContextData, MyContext } from "./App";
 export default function NewChild() {
-  const myNewData = useContext(chidAccessContextData);
+  const { sharedData, newChildData } = useContext(chidAccessContextData);
+  const check = useContext(MyContext);
   return (
     <div>
       <h2>new child</h2>
-      {myNewData}
+      {newChildData}
+      <br />
+      {sharedData}
+      <br />
+      {check}
     </div>
   );
 }
