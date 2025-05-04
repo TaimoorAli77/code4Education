@@ -1,28 +1,25 @@
 import React, { createContext } from 'react'
 import Child1 from './Child1';
-import NewChild from './NewChild';
-
+// create provide consumer
 const MyContext = createContext()
-const chidAccessContextData = createContext()
+const MyNewContext = createContext()
 const App = () => {
-  // create(in parent comp) , provide(in parent Comp) , useContext (in child compo)
+  //create(in parent comp),provide(in parent Comp),useContext (in child compo)=>> useContext Hook for simple useCases
+  // ==> Context Api
   const sharedData = "Hello from parent !!"
-  const newChildData = "Welcome again accessing again new data by using"
+  const newData = 'My hello world new data'
   return (
-
-    <div>
-      <MyContext.Provider value={sharedData}>
-
-        <h1>useContext hook </h1>
-        <chidAccessContextData.Provider value={{newChildData,sharedData}}>
-          <NewChild />
-        </chidAccessContextData.Provider>
-        <Child1 />
-
-      </MyContext.Provider>
-    </div>
+    <MyContext.Provider value={sharedData}>
+      <MyNewContext.Provider value={newData}>
+        <div>
+          <h1>Context Api </h1>
+          <Child1 />
+        </div>
+      </MyNewContext.Provider>
+    </MyContext.Provider>
   )
 }
 
 export default App
-export { MyContext, chidAccessContextData }
+
+export { MyContext, MyNewContext }
