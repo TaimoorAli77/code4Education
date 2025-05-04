@@ -68,5 +68,7 @@ just for the particular function.
 * useContext Hook   (instead of passing props use useContext to access props directly, for authentication, 
   redux replaces , language ,themes change etc are use cases of useContext, manage cache data & api responses,
    dependency configContext settings for apps)
-
+* context api
+* 
+  
 
