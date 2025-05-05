@@ -69,6 +69,6 @@ just for the particular function.
   redux replaces , language ,themes change etc are use cases of useContext, manage cache data & api responses,
    dependency configContext settings for apps)
 * context api
-* 
+* useEffect(Asynchronously works after rendering) and useLayoutEffect (synchronously works)
   
 

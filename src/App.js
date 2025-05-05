@@ -1,25 +1,25 @@
-import React, { createContext } from 'react'
-import Child1 from './Child1';
-// create provide consumer
-const MyContext = createContext()
-const MyNewContext = createContext()
+import React, { useLayoutEffect, useRef, useState } from 'react'
+
 const App = () => {
-  //create(in parent comp),provide(in parent Comp),useContext (in child compo)=>> useContext Hook for simple useCases
-  // ==> Context Api
-  const sharedData = "Hello from parent !!"
-  const newData = 'My hello world new data'
+  const [width, setWidth] = useState(0)
+  const elementRef = useRef(null)
+  console.log(elementRef)
+  useLayoutEffect(() => {
+    if (elementRef.current) {
+      setWidth(elementRef.current.getBoundingClientRect().width)
+    }
+  }, [])
+
   return (
-    <MyContext.Provider value={sharedData}>
-      <MyNewContext.Provider value={newData}>
-        <div>
-          <h1>Context Api </h1>
-          <Child1 />
-        </div>
-      </MyNewContext.Provider>
-    </MyContext.Provider>
+    <div style={{ textAlign: "center" }}>
+      <h1>useLayoutEffect Hook </h1>
+
+      <h2>Width Measurement Example</h2>
+
+      <div ref={elementRef} style={{ width: "600px", margin: 'auto', background: "lightblue" }}>Element whose width is Measured.</div>
+      <p>width : {width}px</p>
+    </div>
   )
 }
 
 export default App
-
-export { MyContext, MyNewContext }
