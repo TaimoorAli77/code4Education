@@ -41,7 +41,8 @@
 .status {
   height: 300px;
   width: 300px;
-  margin: 50px auto 75px; ;
+  margin: 50px auto 75px;
+  ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,11 +50,17 @@
   color: black;
   border-radius: 5%;
 }
-.checkmate{
+
+.checkmate {
   text-align: center;
 }
-.error{
-  color:red;
+
+.error {
+  color: red;
   display: inline-block;
   padding: 0 10px;
+}
+
+li a.active {
+  color: red;
 }

@@ -124,3 +124,15 @@ a refreshes page => we use <Link> instead of a ,  In navbar we use <Link> , to="
       ) : (
         <p>User Not Found</p>
       )}
+
+* Link and NavLink  and active class
+li a.active {
+  color: red;
+}
+<NavLink
+style={({ isActive }) => {
+  return { background: isActive ? "orange" : "transparent" };
+}}
+to="/user"
+>
+
