@@ -133,6 +133,14 @@ li a.active {
 style={({ isActive }) => {
   return { background: isActive ? "orange" : "transparent" };
 }}
-to="/user"
->
+to="/user">
 
+*** useSearchParams   /geturl?name="ali"&category="new"
+
+import { useSearchParams } from "react-router-dom";
+const GetUrlP = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams.get("name"));  // ali
+  const category = searchParams.get("cat");   // new
+setSearchParams({name:"Taimoor"}) it will set the params value in the search bar  
+*** useNavigate Hook: react router dom uses it to goto some url page.after form submission u can go to some other place 

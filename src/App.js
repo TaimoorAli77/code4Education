@@ -6,6 +6,7 @@ import Service from './Component/Service';
 import PageNotFound from './Component/PageNotFound';
 import UserList from './Component/UserList';
 import UserProfile from './Component/UserProfile';
+import GetUrlP from './Component/GetUrlP';
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/service' element={<Service />} />
           <Route path='/user' element={<UserList />} />
           <Route path='/user/:userId' element={<UserProfile />} />
+          <Route path='/geturl' element={<GetUrlP />} />
 
 
           {/* <Route path='/*' element={<h1>Page not Found</h1>} /> */}

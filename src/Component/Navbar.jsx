@@ -46,6 +46,16 @@ const Navbar = () => {
               Users
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => {
+                return { background: isActive ? "Orange" : "transparent" };
+              }}
+              to="/geturl"
+            >
+              Get URL
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
