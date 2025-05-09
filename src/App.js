@@ -1,19 +1,26 @@
-import React, { useSyncExternalStore } from 'react'
+import React, { useState, useTransition, useEffect } from 'react'
 
 const App = () => {
+  const [isPending, startTransition] = useTransition()
+  const [count, setCount] = useState(0);
 
-  const width = useSyncExternalStore((listener) => {
-    window.addEventListener("resize", listener)
-    return () => {
-      window.removeEventListener("resize", listener)
-    }
-  }, () => window.innerWidth)
+  // useEffect Ex 1
+  useEffect(() => {
+    console.log("useState run...")
+  },[count]);
 
+  const handleClick = () => {
+    startTransition(() => {
+      setCount(count + 1)
+      console.log("handle click runs...")
+    })
+  }
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>useSyncExternalStore Hook </h1>
+      <h1>useTransition Hook </h1>
 
-      <h2>{width}</h2>
+      <h2>count: {count}</h2>
+      <button onClick={handleClick}>Update Count</button>
     </div>
   )
 }
