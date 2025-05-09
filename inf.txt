@@ -76,6 +76,51 @@ just for the particular function.
 * useSyncExternalStore
 * useLayoutEffect hook  
 
-* React Router DOM( For managing routing and navigation ) Routes, Route ,Hooks==> useRoute , Nested Routing , Route 
+* React Router DOM  Declarative( For managing routing and navigation ) Routes, Route ,Hooks==> useRoute , Nested Routing , Route 
 parameter (useParams) , navigation (useNavigation) , layouts and layoutRoutes , No Render props (avoid props 
   drilling),ts support available
+=> npm install react-router-dom
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './component/navbar'
+<BrowserRouter>
+  <NavBar>
+        <Routes>
+          <Route path='/' element={<h1>First Page</h1>} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path="/*" element={<h1>page not found </h1>}>
+        </Routes>
+</BrowserRouter>
+* Links , NavBar , Anchar Tag 
+a refreshes page => we use <Link> instead of a ,  In navbar we use <Link> , to="/" instead of href.
+** NavBar should be used inside the BrowserRouter otherwise navigation bar won't appear and gives error.
+* page not found should be last route. /* use in  path & for404page <Link to="/">back to home page</Link>
+*Dynamic routes with params (useParams hook)
+{userData.Users.map((user, i) => {
+  return (
+    <ul key={user.id}>
+      <li>
+        <Link to={`/user/${user.id}`}>{user.name}</Link>
+      </li>
+    </ul>
+  );
+})}
+<Route path='/user' element={<UserList />} />
+<Route path='/user/:userId' element={<UserProfile />} />
+  const userData = {
+    Users: [
+      { id: 1, name: "Taimoor " },
+      { id: 2, name: " Ali" },
+      { id: 3, name: "Hamza" },
+    ],
+  };
+  const { userId } = useParams();
+  const parsedId = parseInt(userId);
+  const user = userData.Users.find((user) => user.id === parsedId);
+  {user ? (
+        <div>
+          <p>Id : {user.id}</p> <p>Name:{user.name}</p>
+        </div>
+      ) : (
+        <p>User Not Found</p>
+      )}
