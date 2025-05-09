@@ -7,6 +7,9 @@ import PageNotFound from './Component/PageNotFound';
 import UserList from './Component/UserList';
 import UserProfile from './Component/UserProfile';
 import GetUrlP from './Component/GetUrlP';
+import Dashboard from './Component/Dashboard';
+import Settings from './Component/Settings';
+import Profile from './Component/Profile';
 
 const App = () => {
 
@@ -23,7 +26,11 @@ const App = () => {
           <Route path='/user' element={<UserList />} />
           <Route path='/user/:userId' element={<UserProfile />} />
           <Route path='/geturl' element={<GetUrlP />} />
-
+          {/* Nested Route  & / is used after parent not before child path */}
+          <Route path='/dashboard/' element={<Dashboard />} >
+            <Route path='settings' element={<Settings />} />
+            <Route path='profile' element={<Profile />} />
+          </Route>
 
           {/* <Route path='/*' element={<h1>Page not Found</h1>} /> */}
           <Route path='/*' element={<PageNotFound />} />

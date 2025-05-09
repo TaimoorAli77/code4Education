@@ -144,3 +144,17 @@ const GetUrlP = () => {
   const category = searchParams.get("cat");   // new
 setSearchParams({name:"Taimoor"}) it will set the params value in the search bar  
 *** useNavigate Hook: react router dom uses it to goto some url page.after form submission u can go to some other place 
+const navigate = useNavigate();
+<button onClick={() => navigate(-1)}>Go to Last Page</button>
+*** Nested Routing   route with routes
+{/* Nested Route  & / is used after parent not before child path */}
+<Route path='/dashboard/' element={<Dashboard />} >
+  <Route path='settings' element={<Settings />} />
+  <Route path='profile' element={<Profile />} />
+</Route>
+Parent Comp =>> import { Link, Outlet, useLocation } from "react-router-dom";
+{/* Do not use / in child Component */}
+<Link to={"profile"}>Profile</Link>
+<Outlet />
+
+*** useLocation Hook (pathname, ? name="" & .... i.e,searchParams,hash)
