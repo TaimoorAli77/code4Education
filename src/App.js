@@ -1,23 +1,14 @@
-import React, { useEffect, useId } from 'react'
-import List from './List'
-import Email from './Email';
+import React from 'react'
+import CounterComp from './CounterComp';
 
 const App = () => {
-  const id = useId()
 
-  useEffect(() => {
-    console.log(id)
-  })
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>useID Hook </h1>
+      <h1>custom Hook </h1>
+      <CounterComp />
 
-      <Email />
-      <article>
-        To just center the text inside an element, use text-align: center;
-      </article>
-      <Email />
-      
+
     </div>
   )
 }

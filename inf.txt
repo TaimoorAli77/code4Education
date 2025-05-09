@@ -70,5 +70,12 @@ just for the particular function.
    dependency configContext settings for apps)
 * context api
 * useEffect(Asynchronously works after rendering) and useLayoutEffect (synchronously works)
-  
+* React Custom Hook e.g, useCounter hook
+* useId hook
+* useDeffered Value
+* useSyncExternalStore
+* useLayoutEffect hook  
 
+* React Router DOM( For managing routing and navigation ) Routes, Route ,Hooks==> useRoute , Nested Routing , Route 
+parameter (useParams) , navigation (useNavigation) , layouts and layoutRoutes , No Render props (avoid props 
+  drilling),ts support available

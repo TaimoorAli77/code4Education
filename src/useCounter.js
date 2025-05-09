@@ -5,6 +5,7 @@ const useCounter = (initialValue = 0, step = 1) => {
     const increment = () => {
         setCount(count + step)
     }
+    
 
     const decrement = () => {
         setCount(count - step)
