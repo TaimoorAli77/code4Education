@@ -11,6 +11,8 @@ import Dashboard from './Component/Dashboard';
 import Settings from './Component/Settings';
 import Profile from './Component/Profile';
 import Table from './Component/Table';
+import NewDataPost from './Component/NewDataPost';
+import DataPut from './Component/DataPut';
 
 const App = () => {
 
@@ -27,12 +29,15 @@ const App = () => {
           <Route path='/user' element={<UserList />} />
           <Route path='/user/:userId' element={<UserProfile />} />
           <Route path='/geturl' element={<GetUrlP />} />
+
           {/* Nested Route  & / is used after parent not before child path */}
           <Route path='/dashboard/' element={<Dashboard />} >
             <Route path='settings' element={<Settings />} />
             <Route path='profile' element={<Profile />} />
           </Route>
           <Route path='/table' element={<Table />} />
+          <Route path='/datapost' element={<NewDataPost />} />
+          <Route path='/dataput' element={<DataPut />} />
 
           {/* <Route path='/*' element={<h1>Page not Found</h1>} /> */}
           <Route path='/*' element={<PageNotFound />} />

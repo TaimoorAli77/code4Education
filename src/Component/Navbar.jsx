@@ -78,6 +78,27 @@ const Navbar = () => {
               Table
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to={"/datapost"}
+              style={({ isActive }) => {
+                return { background: isActive ? "orange" : "" };
+              }}
+            >
+              {" "}
+              New Data Post
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => {
+                return { background: isActive ? "Orange" : "transparent" };
+              }}
+              to="/dataput"
+            >
+              Put Data
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
