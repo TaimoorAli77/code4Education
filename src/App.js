@@ -1,51 +1,29 @@
-import React, { useState, useTransition } from 'react'
+import React, { useEffect, useState, useDeferredValue } from 'react'
+import List from './List'
 
 const App = () => {
-  // const [isPending, startTransition] = useTransition()
-  // const [count, setCount] = useState(0);
-
-  // // useEffect Ex 1
-  // useEffect(() => {
-  //   console.log("useState run...")
-  // },[count]);
-
-  // const handleClick = () => {
-  //   startTransition(() => {
-  //     setCount(count + 1)
-  //     console.log("handle click runs...")
-  //   })
-  // }
-
-  //Ex 2
-  const [isPending, startTransition] = useTransition()
-  const [input, setInput] = useState();
-  const [datalist, setDataList] = useState([])
-  const dataSize = 10000;
-
+  const [input, setInput] = useState()
+  const [count, setCount] = useState(0)
   const handleChange = (e) => {
-    setInput(e.target.value);
-    startTransition(() => {
-      const a = []
-      for (let index = 0; index < dataSize; index++) {
-        a.push(e.target.value)
-      }
-      setDataList(a)
-    })
+    setInput(e.target.value)
   }
+  let defferedValue = useDeferredValue(count)
+  const updateCount = () => {
+    setCount(count + 1)
+  }
+
+  useEffect(() => {
+    console.log(`count : ${count} \n Deffered Value : ${defferedValue}`);
+
+  }, [count, defferedValue]);
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>useTransition Hook </h1>
+      <h1>useDefferedValue Hook </h1>
 
-      {/* <h2>count: {count}</h2>
-      <button onClick={handleClick}>Update Count</button> */}
-      {/* Example 2 */}
       <input type="text" value={input} onChange={handleChange} />
-      {isPending ? " loading ... " : datalist.map((item, index) => (
-        <div key={index}>{item} </div>
-
-      ))}
-
-
+      <List input={input} />
+      <h3>Count : {count}</h3>
+      <button onClick={updateCount}>update Count</button>
     </div>
   )
 }
