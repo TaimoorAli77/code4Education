@@ -1,29 +1,23 @@
-import React, { useEffect, useState, useDeferredValue } from 'react'
+import React, { useEffect, useId } from 'react'
 import List from './List'
+import Email from './Email';
 
 const App = () => {
-  const [input, setInput] = useState()
-  const [count, setCount] = useState(0)
-  const handleChange = (e) => {
-    setInput(e.target.value)
-  }
-  let defferedValue = useDeferredValue(count)
-  const updateCount = () => {
-    setCount(count + 1)
-  }
+  const id = useId()
 
   useEffect(() => {
-    console.log(`count : ${count} \n Deffered Value : ${defferedValue}`);
-
-  }, [count, defferedValue]);
+    console.log(id)
+  })
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>useDefferedValue Hook </h1>
+      <h1>useID Hook </h1>
 
-      <input type="text" value={input} onChange={handleChange} />
-      <List input={input} />
-      <h3>Count : {count}</h3>
-      <button onClick={updateCount}>update Count</button>
+      <Email />
+      <article>
+        To just center the text inside an element, use text-align: center;
+      </article>
+      <Email />
+      
     </div>
   )
 }
