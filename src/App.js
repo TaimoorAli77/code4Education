@@ -1,26 +1,51 @@
-import React, { useState, useTransition, useEffect } from 'react'
+import React, { useState, useTransition } from 'react'
 
 const App = () => {
+  // const [isPending, startTransition] = useTransition()
+  // const [count, setCount] = useState(0);
+
+  // // useEffect Ex 1
+  // useEffect(() => {
+  //   console.log("useState run...")
+  // },[count]);
+
+  // const handleClick = () => {
+  //   startTransition(() => {
+  //     setCount(count + 1)
+  //     console.log("handle click runs...")
+  //   })
+  // }
+
+  //Ex 2
   const [isPending, startTransition] = useTransition()
-  const [count, setCount] = useState(0);
+  const [input, setInput] = useState();
+  const [datalist, setDataList] = useState([])
+  const dataSize = 10000;
 
-  // useEffect Ex 1
-  useEffect(() => {
-    console.log("useState run...")
-  },[count]);
-
-  const handleClick = () => {
+  const handleChange = (e) => {
+    setInput(e.target.value);
     startTransition(() => {
-      setCount(count + 1)
-      console.log("handle click runs...")
+      const a = []
+      for (let index = 0; index < dataSize; index++) {
+        a.push(e.target.value)
+      }
+      setDataList(a)
     })
   }
   return (
     <div style={{ textAlign: "center" }}>
       <h1>useTransition Hook </h1>
 
-      <h2>count: {count}</h2>
-      <button onClick={handleClick}>Update Count</button>
+      {/* <h2>count: {count}</h2>
+      <button onClick={handleClick}>Update Count</button> */}
+      {/* Example 2 */}
+      <input type="text" value={input} onChange={handleChange} />
+      {isPending ? " loading ... " : datalist.map((item, index) => (
+        <div key={index}>{item} </div>
+
+      ))}
+
+
     </div>
   )
 }
