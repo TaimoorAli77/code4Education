@@ -10,6 +10,7 @@ import GetUrlP from './Component/GetUrlP';
 import Dashboard from './Component/Dashboard';
 import Settings from './Component/Settings';
 import Profile from './Component/Profile';
+import Table from './Component/Table';
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route path='settings' element={<Settings />} />
             <Route path='profile' element={<Profile />} />
           </Route>
+          <Route path='/table' element={<Table />} />
 
           {/* <Route path='/*' element={<h1>Page not Found</h1>} /> */}
           <Route path='/*' element={<PageNotFound />} />

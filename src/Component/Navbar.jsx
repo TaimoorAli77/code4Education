@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "../App.css";
-import Dashboard from "./Dashboard";
 const Navbar = () => {
   return (
     <div>
@@ -66,6 +65,17 @@ const Navbar = () => {
             >
               {" "}
               Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/table"}
+              style={({ isActive }) => {
+                return { background: isActive ? "orange" : "" };
+              }}
+            >
+              {" "}
+              Table
             </NavLink>
           </li>
         </ul>
