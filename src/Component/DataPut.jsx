@@ -55,7 +55,7 @@ const DataPut = () => {
         setLoading(false);
       });
     // };
-  }, [data.id]);
+  }, [data]);
   return (
     <div>
       {loading ? "loading..." : ""}

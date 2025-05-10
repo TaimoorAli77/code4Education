@@ -13,6 +13,7 @@ import Profile from './Component/Profile';
 import Table from './Component/Table';
 import NewDataPost from './Component/NewDataPost';
 import DataPut from './Component/DataPut';
+import DataDelete from './Component/DataDelete';
 
 const App = () => {
 
@@ -38,6 +39,8 @@ const App = () => {
           <Route path='/table' element={<Table />} />
           <Route path='/datapost' element={<NewDataPost />} />
           <Route path='/dataput' element={<DataPut />} />
+          <Route path='/datadelete' element={<DataDelete />} />
+
 
           {/* <Route path='/*' element={<h1>Page not Found</h1>} /> */}
           <Route path='/*' element={<PageNotFound />} />

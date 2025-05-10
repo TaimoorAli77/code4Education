@@ -99,6 +99,16 @@ const Navbar = () => {
               Put Data
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              style={({ isActive }) => {
+                return { background: isActive ? "Orange" : "transparent" };
+              }}
+              to="/datadelete"
+            >
+              Delete Data
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>
